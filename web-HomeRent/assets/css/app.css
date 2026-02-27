@@ -1,0 +1,24 @@
+/* HomeRent Web - App Styles (RTL SaaS)
+   Keep it light: Tailwind does the heavy lifting.
+*/
+
+:root{
+  --hr-bg: #f6f7fb;
+}
+
+html, body { height: 100%; }
+
+body{
+  font-family: 'Cairo', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--hr-bg);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar{ width: 10px; height: 10px; }
+::-webkit-scrollbar-track{ background: transparent; }
+::-webkit-scrollbar-thumb{ background: rgba(148,163,184,.55); border-radius: 999px; border: 3px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover{ background: rgba(100,116,139,.75); border: 3px solid transparent; background-clip: content-box; }
+
+/* Tiny utilities */
+.hr-glass{ backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.hr-shadow{ box-shadow: 0 10px 28px rgba(15,23,42,.08); }
