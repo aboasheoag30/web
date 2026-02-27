@@ -1,0 +1,14 @@
+/* assets/site.css - صفحة رئيسية بسيطة */
+:root{--bg:#0f172a;--card:#ffffff;--text:#0f172a;--muted:#64748b;--line:#e5e7eb;--primary:#1e3a8a}
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial;direction:rtl;background:linear-gradient(135deg,#0b1220,#0f172a);color:#fff}
+.wrap{max-width:680px;margin:0 auto;padding:28px;min-height:100vh;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.h1{display:flex;align-items:center;gap:10px}
+.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#1e3a8a,#0b2a6f);display:flex;align-items:center;justify-content:center;font-weight:800}
+.title{font-weight:900;font-size:26px}
+.small{opacity:.85;font-size:13px}
+.cardlink{display:block;text-decoration:none;color:var(--text);background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.35);border-radius:18px;padding:14px 16px;box-shadow:0 18px 45px rgba(0,0,0,.30)}
+.cardlink:hover{filter:brightness(.98)}
+.cardlink b{display:block;font-size:16px;margin-bottom:4px}
+.cardlink .small{color:var(--muted);opacity:1}
+.footer{margin-top:8px;opacity:.7;font-size:12px;text-align:center}

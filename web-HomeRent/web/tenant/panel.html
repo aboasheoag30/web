@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>بوابة المستأجر - ايجار ويب</title>
+<style>
+body{font-family:Tahoma,Arial;background:#f6f7f9;margin:0}
+.wrap{max-width:900px;margin:auto;padding:18px}
+.top{display:flex;justify-content:space-between;align-items:center}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e5e7eb;border-radius:14px;overflow:hidden;margin-top:12px}
+th,td{padding:10px;border-bottom:1px solid #e5e7eb;font-size:14px}
+th{background:#f3f4f6;text-align:right}
+.tag{padding:4px 8px;border-radius:999px;font-size:12px}
+.paid{background:#dcfce7}.pending{background:#fef9c3}.unpaid{background:#fee2e2}
+input,button{padding:10px;border-radius:10px;border:1px solid #d1d5db;width:100%;margin-top:8px}
+button{background:#111827;color:#fff;border:none;cursor:pointer}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:14px;margin-top:12px}
+</style><link rel="stylesheet" href="../assets/official.css"/>
+</head><body>
+<div class="wrap">
+  <div class="top">
+    <h2 style="margin:0">بوابة المستأجر</h2>
+    <button onclick="logout()" style="width:auto">تسجيل خروج</button>
+  </div>
+
+  <div class="card">
+    <h3 style="margin:0 0 8px">رفع طلب اعتماد سداد (ملف واحد)</h3>
+    <div style="color:#6b7280;font-size:13px">اختر scheduleId من الجدول بالأسفل ثم ارفع صورة أو PDF.</div>
+    <input id="sid" placeholder="scheduleId"/>
+    <input id="file" type="file" accept="image/*,application/pdf"/>
+    <button onclick="upload()">إرسال الطلب</button>
+    <div id="msg" style="margin-top:10px"></div>
+  </div>
+
+  <table>
+    <thead><tr><th>الدفعة</th><th>الاستحقاق</th><th>المبلغ</th><th>الحالة</th><th>scheduleId</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <div class="card">
+    <h3 style="margin:0 0 8px">تنبيهات</h3>
+    <div id="notifs"></div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin:0 0 8px">تغيير كلمة المرور</h3>
+    <input id="oldPw" type="password" placeholder="كلمة المرور الحالية"/>
+    <input id="newPw" type="password" placeholder="كلمة المرور الجديدة"/>
+    <button onclick="changePw()">تغيير</button>
+    <div id="pwMsg" style="margin-top:10px"></div>
+  </div>
+</div>
+
+<script src="../assets/app.js"></script>
+
+<script>
+function badge(st){
+  const map={paid:["مدفوع","paid"],pending:["معلق","pending"],unpaid:["غير مدفوع","unpaid"]};
+  const x=map[st]||["-","unpaid"];
+  return `<span class="tag ${x[1]}">${x[0]}</span>`;
+}
+async function load(){
+  const year=new Date().getFullYear();
+  const d=await api("/tenant/schedule.php?year="+year);
+  rows.innerHTML="";
+  for(const it of d.items){
+    const tr=document.createElement("tr");
+    tr.innerHTML=`<td>#${it.seq}</td><td>${it.due_date}</td><td>${Number(it.amount).toFixed(2)}</td><td>${badge(it.status)}</td><td>${it.scheduleId}</td>`;
+    rows.appendChild(tr);
+  }
+}
+async function upload(){
+  msg.textContent="";
+  try{
+    const f=file.files[0];
+    if(!f) throw new Error("اختر ملفاً");
+    const form=new FormData();
+    form.append("scheduleId", sid.value);
+    form.append("file", f);
+    const data=await api("/tenant/payment_request_upload.php",{method:"POST",body:form,isForm:true});
+    msg.textContent="✅ تم رفع الطلب رقم: "+data.requestId;
+    await load();
+  }catch(e){ msg.textContent="❌ "+e.message; }
+}
+async function loadNotifs(){
+  const n=await api("/notifications/inbox.php");
+  notifs.innerHTML = n.items.length ? "" : "<span style='color:#6b7280'>لا توجد تنبيهات</span>";
+  for(const it of n.items){
+    const div=document.createElement("div");
+    div.style.padding="10px 0";
+    div.style.borderBottom="1px dashed #e5e7eb";
+    div.innerHTML=`<b>${it.title}</b><div style="color:#6b7280;font-size:13px">${it.created_at}</div><div>${it.body}</div>`;
+    notifs.appendChild(div);
+  }
+}
+async function changePw(){
+  pwMsg.textContent='';
+  try{
+    await api('/auth/change_password.php',{method:'POST',body:{oldPassword:oldPw.value,newPassword:newPw.value}});
+    pwMsg.textContent='✅ تم تغيير كلمة المرور'; oldPw.value=''; newPw.value='';
+  }catch(e){ pwMsg.textContent='❌ '+e.message; }
+}
+
+async function boot(){
+  try{
+    const me = await api("/me.php");
+    if(!(["tenant"]).includes(me.me.role)) { alert("ليس لديك صلاحية"); logout(); return; }
+ await load(); await loadNotifs(); }
+  catch(e){ alert(e.message); logout(); }
+}
+boot();
+</script>
+</body></html>

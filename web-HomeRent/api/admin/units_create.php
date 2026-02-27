@@ -1,0 +1,20 @@
+<?php
+declare(strict_types=1);
+require_once __DIR__ . '/../_core/db.php';
+require_once __DIR__ . '/../_core/helpers.php';
+require_once __DIR__ . '/../_core/auth.php';
+cors(); require_method('POST');
+$me=require_auth(); $ownerId=require_owner_scope($me);
+$body=json_decode(file_get_contents('php://input'), true);
+$propertyId=safe_int($body['propertyId']??0);
+$unitType=safe_str($body['unitType']??'شقة');
+$name=safe_str($body['name']??'');
+$rent=(float)($body['rentAmount']??0);
+if($propertyId<=0||$name==='') json_error('بيانات الوحدة غير مكتملة',422);
+$pdo=db();
+$st=$pdo->prepare("SELECT id FROM properties WHERE id=? AND owner_id=? LIMIT 1");
+$st->execute([$propertyId,$ownerId]);
+if(!$st->fetch()) json_error('العقار غير موجود',404);
+$st=$pdo->prepare("INSERT INTO units (property_id,unit_type,name,rent_amount) VALUES (?,?,?,?)");
+$st->execute([$propertyId,$unitType,$name,$rent]);
+json_ok(['unitId'=>(int)$pdo->lastInsertId()]);
