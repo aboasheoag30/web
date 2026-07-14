@@ -1,0 +1,4 @@
+/* File: /assets/css/layout.css */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.statistics .stats-grid,.services-grid,.features-grid,.properties-grid,.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.footer{background:var(--footer-bg);color:#fff;padding:60px 0}

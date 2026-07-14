@@ -1,0 +1,1364 @@
+/*
+|--------------------------------------------------------------------------
+| File Name : responsive.css
+| Path      : /assets/css/responsive.css
+| Project   : My Real Estate Wallet
+| Version   : 1.0.0
+|--------------------------------------------------------------------------
+*/
+
+/*==============================================================
+=                    RESPONSIVE DESIGN                         =
+==============================================================*/
+
+
+/*==============================================================
+=                  Large Desktop (1600px)                      =
+==============================================================*/
+
+@media (max-width:1600px){
+
+    .container{
+
+        max-width:1400px;
+
+    }
+
+}
+
+
+/*==============================================================
+=                  Desktop (1400px)                            =
+==============================================================*/
+
+@media (max-width:1400px){
+
+    .container{
+
+        max-width:1200px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:52px;
+
+    }
+
+    .section-title h2{
+
+        font-size:40px;
+
+    }
+
+}
+
+
+/*==============================================================
+=                  Laptop (1200px)                             =
+==============================================================*/
+
+@media (max-width:1200px){
+
+    .container{
+
+        max-width:1000px;
+
+    }
+
+    .hero .container{
+
+        gap:45px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:46px;
+
+    }
+
+    .hero-content p{
+
+        font-size:18px;
+
+    }
+
+    .services-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .properties-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .statistics-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .dashboard-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+/*==============================================================
+=                Small Laptop (1024px)                         =
+==============================================================*/
+
+@media (max-width:1024px){
+
+    .hero{
+
+        padding-top:150px;
+
+    }
+
+    .hero .container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero-image{
+
+        order:-1;
+
+    }
+
+    .hero-content{
+
+        text-align:center;
+
+    }
+
+    .hero-content p{
+
+        margin:auto auto 35px;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .hero-stats{
+
+        justify-content:center;
+
+    }
+
+    .about-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .features-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .login-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .login-cover{
+
+        display:none;
+
+    }
+
+    .dashboard-content{
+
+        margin-right:0;
+
+    }
+
+    .sidebar{
+
+        transform:translateX(100%);
+
+        transition:.35s;
+
+    }
+
+    .sidebar.show{
+
+        transform:translateX(0);
+
+    }
+
+}
+
+
+/*==============================================================
+=                    Tablet (992px)                            =
+==============================================================*/
+
+@media (max-width:992px){
+
+    .navbar{
+
+        height:75px;
+
+    }
+
+    .main-nav{
+
+        display:none;
+
+    }
+
+    .btn-login{
+
+        display:none;
+
+    }
+
+    .mobile-menu{
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+
+    }
+
+    .section-title{
+
+        margin-bottom:50px;
+
+    }
+
+    .section-title h2{
+
+        font-size:36px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:42px;
+
+    }
+
+    .hero-content p{
+
+        font-size:17px;
+
+    }
+
+    .partners-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+    .testimonials-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+/*==============================================================
+=                 Tablet Portrait (768px)                      =
+==============================================================*/
+
+@media (max-width:768px){
+
+    section{
+
+        padding:70px 0;
+
+    }
+
+    .container{
+
+        padding-inline:18px;
+
+    }
+
+    .navbar{
+
+        height:70px;
+
+    }
+
+    .logo-image{
+
+        width:50px;
+
+        height:50px;
+
+    }
+
+    .logo-text h2{
+
+        font-size:19px;
+
+    }
+
+    .logo-text span{
+
+        font-size:10px;
+
+        letter-spacing:1px;
+
+    }
+
+    .hero{
+
+        padding-top:130px;
+
+        padding-bottom:70px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:36px;
+
+    }
+
+    .hero-content p{
+
+        font-size:16px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .hero-buttons .btn,
+
+    .hero-buttons .btn-primary,
+
+    .hero-buttons .btn-secondary{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .hero-stats{
+
+        display:grid;
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:15px;
+
+    }
+
+    .hero-stat{
+
+        min-width:auto;
+
+    }
+
+    .section-title{
+
+        margin-bottom:45px;
+
+    }
+
+    .section-title h2{
+
+        font-size:32px;
+
+    }
+
+    .section-title p{
+
+        font-size:16px;
+
+    }
+
+    .services-grid,
+
+    .properties-grid,
+
+    .testimonials-grid,
+
+    .statistics-grid,
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .partners-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:20px;
+
+    }
+
+    .newsletter-form{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .newsletter-form input,
+
+    .newsletter-form button{
+
+        width:100%;
+
+    }
+
+    .contact-form{
+
+        padding:25px;
+
+    }
+
+    .dashboard-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .topbar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+}
+
+/*==============================================================
+=                    Large Mobile (640px)                      =
+==============================================================*/
+
+@media (max-width:640px){
+
+    h1{
+
+        font-size:34px;
+
+    }
+
+    h2{
+
+        font-size:30px;
+
+    }
+
+    h3{
+
+        font-size:24px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:32px;
+
+        line-height:1.4;
+
+    }
+
+    .hero-content p{
+
+        font-size:15px;
+
+    }
+
+    .hero-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .service-card{
+
+        padding:28px;
+
+    }
+
+    .property-body{
+
+        padding:20px;
+
+    }
+
+    .property-image img{
+
+        height:220px;
+
+    }
+
+    .cta-box{
+
+        padding:45px 25px;
+
+    }
+
+    .cta-box h2{
+
+        font-size:28px;
+
+    }
+
+    .testimonial-card{
+
+        padding:28px;
+
+    }
+
+    .faq-question{
+
+        padding:18px 20px;
+
+        font-size:15px;
+
+    }
+
+    .faq-answer{
+
+        padding:0 20px 20px;
+
+    }
+
+    .contact-card{
+
+        flex-direction:column;
+
+    }
+
+    .footer{
+
+        padding:60px 0 25px;
+
+    }
+
+    .footer-bottom{
+
+        margin-top:35px;
+
+    }
+
+    .login-form{
+
+        padding:35px 25px;
+
+    }
+
+}
+/*==============================================================
+=                    Mobile (576px)                            =
+==============================================================*/
+
+@media (max-width:576px){
+
+    .container{
+
+        padding-inline:16px;
+
+    }
+
+    section{
+
+        padding:60px 0;
+
+    }
+
+    .navbar{
+
+        height:68px;
+
+    }
+
+    .logo{
+
+        gap:10px;
+
+    }
+
+    .logo-image{
+
+        width:46px;
+
+        height:46px;
+
+    }
+
+    .logo-text h2{
+
+        font-size:18px;
+
+    }
+
+    .logo-text span{
+
+        display:none;
+
+    }
+
+    .hero{
+
+        padding-top:115px;
+
+        padding-bottom:55px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:30px;
+
+    }
+
+    .hero-content p{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+    }
+
+    .hero-stat{
+
+        padding:18px;
+
+    }
+
+    .hero-stat h3{
+
+        font-size:28px;
+
+    }
+
+    .section-title h2{
+
+        font-size:28px;
+
+    }
+
+    .section-title p{
+
+        font-size:15px;
+
+    }
+
+    .service-card{
+
+        padding:24px;
+
+    }
+
+    .service-icon{
+
+        width:70px;
+
+        height:70px;
+
+        font-size:28px;
+
+    }
+
+    .property-image img{
+
+        height:210px;
+
+    }
+
+    .property-body{
+
+        padding:18px;
+
+    }
+
+    .property-info{
+
+        flex-direction:column;
+
+        gap:12px;
+
+        align-items:flex-start;
+
+    }
+
+    .stat-card{
+
+        padding:28px 20px;
+
+    }
+
+    .stat-card h3{
+
+        font-size:36px;
+
+    }
+
+    .cta-box{
+
+        padding:40px 20px;
+
+    }
+
+    .contact-form{
+
+        padding:22px;
+
+    }
+
+    .login-form{
+
+        padding:30px 20px;
+
+    }
+
+}
+
+/*==============================================================
+=                    Mobile (480px)                            =
+==============================================================*/
+
+@media (max-width:480px){
+
+    h1{
+
+        font-size:28px;
+
+    }
+
+    h2{
+
+        font-size:25px;
+
+    }
+
+    h3{
+
+        font-size:21px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:28px;
+
+    }
+
+    .hero-content p{
+
+        font-size:14px;
+
+    }
+
+    .hero-buttons{
+
+        gap:12px;
+
+    }
+
+    .btn,
+
+    .btn-primary,
+
+    .btn-secondary,
+
+    .btn-login{
+
+        width:100%;
+
+        padding:14px 20px;
+
+    }
+
+    .hero-stat{
+
+        text-align:center;
+
+    }
+
+    .service-card{
+
+        padding:20px;
+
+    }
+
+    .testimonial-card{
+
+        padding:22px;
+
+    }
+
+    .testimonial-user{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .faq-question{
+
+        padding:16px 18px;
+
+        font-size:14px;
+
+    }
+
+    .faq-answer{
+
+        padding:0 18px 18px;
+
+        font-size:14px;
+
+    }
+
+    .contact-card{
+
+        padding:20px;
+
+    }
+
+    .footer{
+
+        text-align:center;
+
+    }
+
+    .footer-social{
+
+        justify-content:center;
+
+    }
+
+    .footer-links{
+
+        align-items:center;
+
+    }
+
+    .topbar{
+
+        padding:18px;
+
+    }
+
+    .dashboard-content{
+
+        padding:18px;
+
+    }
+
+}
+
+/*==============================================================
+=                  iPhone Pro Max (430px)                      =
+==============================================================*/
+
+@media (max-width:430px){
+
+    .hero-content h1{
+
+        font-size:26px;
+
+    }
+
+    .hero-content p{
+
+        font-size:14px;
+
+    }
+
+    .section-title{
+
+        margin-bottom:35px;
+
+    }
+
+    .section-title h2{
+
+        font-size:24px;
+
+    }
+
+    .property-image img{
+
+        height:190px;
+
+    }
+
+    .partner{
+
+        padding:15px;
+
+    }
+
+    .partner img{
+
+        max-height:45px;
+
+    }
+
+}
+/*==============================================================
+=                 Mobile (414px)                               =
+==============================================================*/
+
+@media (max-width:414px){
+
+    .container{
+
+        padding-inline:14px;
+
+    }
+
+    .navbar{
+
+        height:65px;
+
+    }
+
+    .logo-image{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+    .logo-text h2{
+
+        font-size:16px;
+
+    }
+
+    .hero{
+
+        padding-top:105px;
+
+        padding-bottom:50px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:24px;
+
+    }
+
+    .hero-content p{
+
+        font-size:14px;
+
+    }
+
+    .hero-stat{
+
+        padding:16px;
+
+    }
+
+    .hero-stat h3{
+
+        font-size:24px;
+
+    }
+
+    .section-title h2{
+
+        font-size:22px;
+
+    }
+
+    .section-title p{
+
+        font-size:14px;
+
+    }
+
+    .service-card,
+
+    .testimonial-card,
+
+    .contact-form{
+
+        padding:18px;
+
+    }
+
+}
+
+/*==============================================================
+=                 Mobile (390px)                               =
+==============================================================*/
+
+@media (max-width:390px){
+
+    .hero-buttons{
+
+        gap:10px;
+
+    }
+
+    .btn,
+
+    .btn-primary,
+
+    .btn-secondary{
+
+        font-size:14px;
+
+        padding:13px 18px;
+
+    }
+
+    .property-image img{
+
+        height:180px;
+
+    }
+
+    .property-body{
+
+        padding:16px;
+
+    }
+
+    .dashboard-card{
+
+        padding:20px;
+
+    }
+
+    .dashboard-card h3{
+
+        font-size:28px;
+
+    }
+
+    .content-card{
+
+        padding:20px;
+
+    }
+
+}
+
+/*==============================================================
+=                 Mobile (375px)                               =
+==============================================================*/
+
+@media (max-width:375px){
+
+    body{
+
+        font-size:14px;
+
+    }
+
+    h1{
+
+        font-size:24px;
+
+    }
+
+    h2{
+
+        font-size:22px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:22px;
+
+    }
+
+    .hero-content p{
+
+        font-size:13px;
+
+    }
+
+    .section-title{
+
+        margin-bottom:30px;
+
+    }
+
+    .service-icon{
+
+        width:60px;
+
+        height:60px;
+
+        font-size:24px;
+
+    }
+
+    .property-price{
+
+        font-size:13px;
+
+        padding:8px 14px;
+
+    }
+
+    .footer{
+
+        padding:50px 0 20px;
+
+    }
+
+}
+
+/*==============================================================
+=                 Mobile (360px)                               =
+==============================================================*/
+
+@media (max-width:360px){
+
+    .container{
+
+        padding-inline:12px;
+
+    }
+
+    .hero{
+
+        padding-top:100px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:20px;
+
+    }
+
+    .hero-stat{
+
+        padding:14px;
+
+    }
+
+    .hero-stat h3{
+
+        font-size:22px;
+
+    }
+
+    .stat-card{
+
+        padding:20px 15px;
+
+    }
+
+    .stat-card h3{
+
+        font-size:30px;
+
+    }
+
+    .newsletter-form input{
+
+        height:50px;
+
+    }
+
+    .newsletter-form button{
+
+        height:50px;
+
+    }
+
+    .login-form{
+
+        padding:25px 16px;
+
+    }
+
+}
+
+/*==============================================================
+=              Small Mobile (320px)                            =
+==============================================================*/
+
+@media (max-width:320px){
+
+    .container{
+
+        padding-inline:10px;
+
+    }
+
+    .logo{
+
+        gap:8px;
+
+    }
+
+    .logo-image{
+
+        width:38px;
+
+        height:38px;
+
+    }
+
+    .logo-text h2{
+
+        font-size:15px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:18px;
+
+        line-height:1.6;
+
+    }
+
+    .hero-content p{
+
+        font-size:13px;
+
+    }
+
+    .btn,
+
+    .btn-primary,
+
+    .btn-secondary,
+
+    .btn-login{
+
+        font-size:13px;
+
+        padding:12px 14px;
+
+    }
+
+    .section-title h2{
+
+        font-size:20px;
+
+    }
+
+    .property-image img{
+
+        height:160px;
+
+    }
+
+    .dashboard-content{
+
+        padding:15px;
+
+    }
+
+    .dashboard-card{
+
+        padding:16px;
+
+    }
+
+    .dashboard-card .icon{
+
+        width:50px;
+
+        height:50px;
+
+        font-size:20px;
+
+    }
+
+}
+
+/*==============================================================
+=                  Landscape Phones                            =
+==============================================================*/
+
+@media (max-height:500px) and (orientation:landscape){
+
+    .hero{
+
+        padding-top:90px;
+
+        padding-bottom:40px;
+
+    }
+
+    section{
+
+        padding:50px 0;
+
+    }
+
+    .sidebar{
+
+        overflow-y:auto;
+
+    }
+
+}
+
+/*==============================================================
+=                    Large Screens                             =
+==============================================================*/
+
+@media (min-width:1800px){
+
+    .container{
+
+        max-width:1600px;
+
+    }
+
+}
+
+/*==============================================================
+=                    END OF FILE                               =
+==============================================================*/
